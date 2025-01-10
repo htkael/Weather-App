@@ -10,36 +10,72 @@
     />
   </head>
   <body>
-    <header>
-      <div class="titleContainer">
-        <h1>Weather Forecast</h1>
+    <div class="bodyOne">
+      <div class="body">
+        <section class="searchSec">
+          <form>
+            <button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-search"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search for your city..."
+            />
+          </form>
+        </section>
+        <section class="locationInfo">
+          <div class="description"></div>
+          <div class="cityState"></div>
+        </section>
+        <section class="weatherCard">
+          <div class="temps">
+            <div class="tempContainer">
+              <div class="degreeContainer">
+                <div class="temp"></div>
+                <span class="degree"></span>
+              </div>
+            </div>
+            <div class="otherInfo">
+              <div>
+                <div class="conditions"></div>
+                <div id="conditions"></div>
+              </div>
+              <div>
+                <div class="feelslike"></div>
+                <div id="feelslike"></div>
+              </div>
+              <div>
+                <div class="humidity"></div>
+                <div id="humidity"></div>
+              </div>
+              <div>
+                <div class="precip"></div>
+                <div id="precip"></div>
+              </div>
+            </div>
+          </div>
+          <div class="nextDays">
+            <h2 class="nextDaysText"></h2>
+            <div class="days"></div>
+          </div>
+        </section>
       </div>
-    </header>
-    <section class="searchSec">
-      <form>
-        <input type="text" name="search" id="search" />
-        <button>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-search"
-          >
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-        </button>
-      </form>
-    </section>
-    <section class="locationInfo">
-      <div class="cityState"></div>
-      <div class="description"></div>
-    </section>
+    </div>
   </body>
 </html>

@@ -1,5 +1,5 @@
 import "./styles.css";
-import { updateLocationInfo } from "./ui";
+import { updateLocationInfo, updateNextDays, updateWeather } from "./ui";
 
 // get weather data from API
 const fetchData = async (inp) => {
@@ -20,7 +20,7 @@ const fetchData = async (inp) => {
 };
 
 // Filter data for what we need
-export const processData = async (inp) => {
+const processData = async (inp) => {
   const data = await fetchData(inp);
 
   if (!data) {
@@ -78,10 +78,9 @@ const addSearchListener = () => {
     event.preventDefault();
     const weatherInfo = await getLocation();
     console.log(weatherInfo);
-    updateLocationInfo(
-      weatherInfo.locationInfo.resolvedAddress,
-      weatherInfo.locationInfo.description
-    );
+    updateLocationInfo(weatherInfo.locationInfo);
+    updateWeather(weatherInfo.currentWeather);
+    updateNextDays(weatherInfo.nextFiveDays);
   });
 };
 
